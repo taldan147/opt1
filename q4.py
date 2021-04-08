@@ -35,25 +35,39 @@ print(x2)
 
 # SVD facorization x = Vy = Vsimga^-1U^Tb
 
+
+
 (U,S,V) = LA.svd(A, full_matrices=False)
 
-print(U)
-
+print("U",U)
+print("S", S)
+V=V.transpose()
+print("V",V)
 
 
 Utb = (U.transpose())@b
 print("utb" , Utb)
 
 
-print("S", S)
 
 
-S=np.asarray(S)
 
-# y = np.asarray([Utb[0]/S[0], Utb[1]/S[1], Utb[2]/S[2]])
-y = Utb/S
-print(y)
+# S= np.asarray([[S[0]],[S[1]],[S[2]]])
 
-# x3 = V@y
-# print(x3)
+y = np.asarray([Utb[0]/S[0], Utb[1]/S[1], Utb[2]/S[2]])
+# y = Utb1/S
+print("y",y)
 
+x3 = V@y
+print(x3)
+
+
+# ----------------------------------------------- 4c --------------------------------------------------
+
+r = (A@x) - b
+
+print("r", r)
+
+Atr = AT@r
+
+print("ATr", Atr)
