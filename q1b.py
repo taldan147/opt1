@@ -33,3 +33,4 @@ print("l2 nortm" ,l2norm)
 
 
 print("AV", Al2)
+
