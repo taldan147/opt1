@@ -16,6 +16,8 @@ LT = L.transpose()
 
 LLT = (L@LT)
 
+
+
 ATb = (AT@b)
 
 LLTinv = LA.inv(LLT)
@@ -71,3 +73,17 @@ print("r", r)
 Atr = AT@r
 
 print("ATr", Atr)
+
+# ----------------------------------------------- 4d --------------------------------------------------
+
+W = np.asarray([[808,0,0,0], [0,1,0,0], [0,0,1,0], [0,0,0,1]])
+
+ATWA = AT@W@A
+
+ATWAinv = LA.inv(ATWA)
+
+xw = ATWAinv@AT@W@b
+
+rw = (A@xw)-b
+
+print(rw)
