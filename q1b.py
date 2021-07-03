@@ -19,3 +19,7 @@ Al2 = AVl2/vl2
 
 print("AV", Al2)
 
+
+
+print(np.triu(A))
+
